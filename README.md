@@ -1,1 +1,1 @@
-# calculator
+In this project I will be building a calculator. I will use HTML and CSS for the content and style, but I will be mainly demonstrating my Javascript knowledge. I will add functionalities to the calaculator such as addition, subtraction, multiplication, division, a delete button, and a clear button. 
