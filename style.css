@@ -1,0 +1,12 @@
+body {
+    display: flex;
+    height: 97vh;
+    justify-content: center;
+    align-items: center;
+}
+.calculator {
+    background: #333333;
+    height: 500px;
+    width: 400px;
+    border-radius: 40px;
+}
