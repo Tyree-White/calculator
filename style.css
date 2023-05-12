@@ -5,12 +5,10 @@ body {
     align-items: center;
 }
 .calculator {
-    display: flex;
     background: #333333;
     height: 500px;
     width: 400px;
     border-radius: 40px;
-    justify-content: center;
 }
 
 .screen {
@@ -19,8 +17,33 @@ body {
     width: 330px;
     height: 100px;
     border-radius: 30px;
-    margin-top: 35px;
     justify-content: end;
     align-items: center;
     padding: 0px 20px;
+    margin: auto;
+    margin-top: 35px;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.clear {
+    background: #008ecc;
+    width: 182px;
+    height: 50px;
+    border-radius: 13px;
+    font-size: 40px;
+    color: lightgrey;
+}
+
+.delete {
+    background-color: #D30000;
+    width: 182px;
+    height: 50px;
+    border-radius: 13px;
+    font-size: 40px;
+    color: lightgrey;
 }
