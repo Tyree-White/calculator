@@ -71,6 +71,6 @@ div .numbers {
     align-items: center;
 }
 
-#operator {
-    background: #FF9500;
+.operator {
+    background: #ff9500;
 }
