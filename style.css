@@ -28,11 +28,12 @@ body {
 .buttons {
     display: flex;
     justify-content: center;
+    gap: 8px;
 }
 
 .clear {
     background: #008ecc;
-    width: 182px;
+    width: 178px;
     height: 50px;
     border-radius: 13px;
     font-size: 40px;
@@ -41,9 +42,30 @@ body {
 
 .delete {
     background-color: #D30000;
-    width: 182px;
+    width: 178px;
     height: 50px;
     border-radius: 13px;
     font-size: 40px;
     color: lightgrey;
 }
+
+
+div .numbers {
+    height: 290px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    justify-content: center;
+    margin: 0px 19px;
+}
+.number {
+    background: #999999;
+    margin: 6px 6px;
+    width: 60.5px;
+    border-radius: 50%;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
