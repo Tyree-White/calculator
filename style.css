@@ -56,10 +56,12 @@ div .numbers {
     flex-wrap: wrap;
     flex-grow: 1;
     justify-content: center;
-    margin: 0px 19px;
+    margin: 0px 20px;
+    column-gap: 15px;
 }
+
 .number {
-    background: #999999;
+    background: #d4d4d2;
     margin: 6px 6px;
     width: 60.5px;
     border-radius: 50%;
@@ -69,3 +71,6 @@ div .numbers {
     align-items: center;
 }
 
+#operator {
+    background: #FF9500;
+}
