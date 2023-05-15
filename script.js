@@ -1,3 +1,7 @@
+let numbers = document.querySelectorAll('.number');
+let decimal = document.querySelector('#decimalBtn');
+
+
 function add(x, y) {
     return x + y;
 }

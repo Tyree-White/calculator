@@ -13,7 +13,7 @@ body {
 
 .screen {
     display: flex;
-    background: #999999;
+    background: #d4d4d2;
     width: 330px;
     height: 100px;
     border-radius: 30px;
@@ -60,7 +60,7 @@ div .numbers {
     column-gap: 15px;
 }
 
-.number {
+.btn {
     background: #d4d4d2;
     margin: 6px 6px;
     width: 60.5px;
