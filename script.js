@@ -2,6 +2,8 @@ let numbers = document.querySelectorAll('.number');
 numbers.forEach(number => number.addEventListener('click', printNumber));
 let decimal = document.querySelector('#decimalBtn');
 decimal.addEventListener('click', printDecimal);
+let clear = document.querySelector('.clear');
+clear.addEventListener('click', clearCalc);
 let screen = document.querySelector('.screen');
 
 function add(x, y) {
@@ -26,4 +28,8 @@ function printDecimal() {
 
 function printNumber() {
     return screen.textContent += this.value
+}
+
+function clearCalc() {
+    location.reload();
 }
