@@ -54,6 +54,10 @@ function printDecimal() {
 }
 
 function printNumber() {
+    if (operator === '=') {
+        topText.textContent = bottom.textContent;
+        operator = undefined;
+    }
     return bottom.textContent += this.value
 }
 
@@ -116,27 +120,28 @@ function operate() {
 
     switch (operator) {
         case '+':
-          result = firstOperand + secondOperand;
+          result = add(firstOperand, secondOperand);
           topText.textContent = `${firstOperand} + ${secondOperand} =`
           bottom.textContent = result;
           break;
         case '-':
-          result = firstOperand - secondOperand;
+          result = subtract(firstOperand, secondOperand);
           topText.textContent = `${firstOperand} - ${secondOperand} =`
           bottom.textContent = result;
           break;
         case 'x':
-          result = firstOperand * secondOperand;
+          result = multiply(firstOperand, secondOperand);
           topText.textContent = `${firstOperand} * ${secondOperand} =`
           bottom.textContent = result;
           break;
         case '/':
-          result = firstOperand / secondOperand;
+          result = divide(firstOperand, secondOperand);
           topText.textContent = `${firstOperand} / ${secondOperand} =`
           bottom.textContent = result;
           break;
         default:
-          bottom.textContent = 'Error Press Clear';
+          bottom.textContent = 'Error';
+          operator = 'Error';
     }
     operator = '=';
 }
