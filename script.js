@@ -60,6 +60,8 @@ function printNumber() {
     if (operator === '=') {
         let operators = document.querySelectorAll('.operator');
         operators.forEach(operator => operator.disabled = false);
+        decimal.disabled = false;
+
         topText.textContent = bottom.textContent;
         bottom.textContent = '';
         operator = undefined;
@@ -132,26 +134,31 @@ function operate() {
     switch (operator) {
         case '+':
           result = add(firstOperand, secondOperand);
+          result = Math.round(result * 1000)/1000;
           topText.textContent = `${firstOperand} + ${secondOperand} =`
           bottom.textContent = result;
           break;
         case '-':
           result = subtract(firstOperand, secondOperand);
+          result = Math.round(result * 1000)/1000;
           topText.textContent = `${firstOperand} - ${secondOperand} =`
           bottom.textContent = result;
           break;
         case 'x':
           result = multiply(firstOperand, secondOperand);
+          result = Math.round(result * 1000)/1000;
           topText.textContent = `${firstOperand} * ${secondOperand} =`
           bottom.textContent = result;
           break;
         case '/':
           result = divide(firstOperand, secondOperand);
+          result = Math.round(result * 1000)/1000;
           topText.textContent = `${firstOperand} / ${secondOperand} =`
           bottom.textContent = result;
           break;
         default:
           operators.forEach(operator => operator.disabled = true);
+          decimal.disabled = true;
           bottom.textContent = 'Error';
     }
     operator = '=';
