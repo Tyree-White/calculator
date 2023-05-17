@@ -22,6 +22,9 @@ addBtn.addEventListener('click', addition);
 let subtractBtn = document.querySelector('#subtractBtn');
 subtractBtn.addEventListener('click', subtraction);
 
+let multiplyBtn = document.querySelector('#multiplyBtn');
+multiplyBtn.addEventListener('click', multiplication);
+
 function add(x, y) {
     return x + y;
 }
@@ -68,6 +71,14 @@ function addition() {
 function subtraction() {
     firstOperand = screen.textContent;
     operator = '-';
+    screen.textContent = "";
+    let operators = document.querySelectorAll('.operator');
+    operators.forEach(operator => operator.disabled = true);
+}
+
+function multiplication() {
+    firstOperand = screen.textContent;
+    operator = 'x';
     screen.textContent = "";
     let operators = document.querySelectorAll('.operator');
     operators.forEach(operator => operator.disabled = true);
