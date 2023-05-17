@@ -29,6 +29,9 @@ multiplyBtn.addEventListener('click', multiplication);
 let divideBtn = document.querySelector('#divideBtn');
 divideBtn.addEventListener('click', division);
 
+let equal = document.querySelector('#equalBtn')
+equal.addEventListener('click', operate)
+
 function add(x, y) {
     return x + y;
 }
@@ -63,12 +66,11 @@ function deleteNumber() {
     newText = bottomText.substring(0, bottomText.length-1);
     bottom.textContent = newText;
     decimal.disabled = false;
-    return console.log(newText);
 }
 
 function addition() {
     firstOperand = bottom.textContent;
-    topText.textContent = `${firstOperand} + `
+    topText.textContent = `${firstOperand} +`
     operator = '+';
     bottom.textContent = "";
     let operators = document.querySelectorAll('.operator');
@@ -78,7 +80,7 @@ function addition() {
 
 function subtraction() {
     firstOperand = bottom.textContent;
-    topText.textContent = `${firstOperand} - `
+    topText.textContent = `${firstOperand} -`
     operator = '-';
     bottom.textContent = "";
     let operators = document.querySelectorAll('.operator');
@@ -88,7 +90,7 @@ function subtraction() {
 
 function multiplication() {
     firstOperand = bottom.textContent;
-    topText.textContent = `${firstOperand} x `
+    topText.textContent = `${firstOperand} x`
     operator = 'x';
     bottom.textContent = "";
     let operators = document.querySelectorAll('.operator');
@@ -98,10 +100,43 @@ function multiplication() {
 
 function division() {
     firstOperand = bottom.textContent;
-    topText.textContent = `${firstOperand} / `
+    topText.textContent = `${firstOperand} /`
     operator = '/';
     bottom.textContent = "";
     let operators = document.querySelectorAll('.operator');
     operators.forEach(operator => operator.disabled = true);
     decimal.disabled = false;
+}
+
+function operate() {
+    let result;
+    secondOperand = bottom.textContent;
+    firstOperand = Number(firstOperand);
+    secondOperand = Number(secondOperand);
+
+    switch (operator) {
+        case '+':
+          result = firstOperand + secondOperand;
+          topText.textContent = `${firstOperand} + ${secondOperand} =`
+          bottom.textContent = result;
+          break;
+        case '-':
+          result = firstOperand - secondOperand;
+          topText.textContent = `${firstOperand} - ${secondOperand} =`
+          bottom.textContent = result;
+          break;
+        case 'x':
+          result = firstOperand * secondOperand;
+          topText.textContent = `${firstOperand} * ${secondOperand} =`
+          bottom.textContent = result;
+          break;
+        case '/':
+          result = firstOperand / secondOperand;
+          topText.textContent = `${firstOperand} / ${secondOperand} =`
+          bottom.textContent = result;
+          break;
+        default:
+          bottom.textContent = 'Error Press Clear';
+    }
+    operator = '=';
 }
