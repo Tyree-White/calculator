@@ -19,6 +19,9 @@ let screen = document.querySelector('.screen');
 let addBtn = document.querySelector('#addBtn');
 addBtn.addEventListener('click', addition);
 
+let subtractBtn = document.querySelector('#subtractBtn');
+subtractBtn.addEventListener('click', subtraction);
+
 function add(x, y) {
     return x + y;
 }
@@ -57,6 +60,14 @@ function deleteNumber() {
 function addition() {
     firstOperand = screen.textContent;
     operator = '+';
+    screen.textContent = "";
+    let operators = document.querySelectorAll('.operator');
+    operators.forEach(operator => operator.disabled = true);
+}
+
+function subtraction() {
+    firstOperand = screen.textContent;
+    operator = '-';
     screen.textContent = "";
     let operators = document.querySelectorAll('.operator');
     operators.forEach(operator => operator.disabled = true);
