@@ -45,6 +45,9 @@ function multiply(x, y) {
 }
 
 function divide(x, y) {
+    if (y === 0) {
+        return 'Deez Nutz';
+    }
     return x / y;
 }
 
