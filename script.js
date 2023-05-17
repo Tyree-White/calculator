@@ -14,7 +14,8 @@ clear.addEventListener('click', clearCalc);
 let del = document.querySelector('.delete');
 del.addEventListener('click', deleteNumber)
 
-let screen = document.querySelector('.screen');
+let topText = document.querySelector('.top');
+let bottom = document.querySelector('.bottom');
 
 let addBtn = document.querySelector('#addBtn');
 addBtn.addEventListener('click', addition);
@@ -45,11 +46,11 @@ function divide(x, y) {
 }
 
 function printDecimal() {
-    return screen.textContent += this.value;
+    return bottom.textContent += this.value;
 }
 
 function printNumber() {
-    return screen.textContent += this.value
+    return bottom.textContent += this.value
 }
 
 function clearCalc() {
@@ -57,40 +58,44 @@ function clearCalc() {
 }
 
 function deleteNumber() {
-    let screenText = screen.textContent;
-    newText = screenText.substring(0, screenText.length-1);
-    screen.textContent = newText;
+    let bottomText = bottom.textContent;
+    newText = bottomText.substring(0, bottomText.length-1);
+    bottom.textContent = newText;
     return console.log(newText);
 }
 
 function addition() {
-    firstOperand = screen.textContent;
+    firstOperand = bottom.textContent;
+    topText.textContent = `${firstOperand} + `
     operator = '+';
-    screen.textContent = "";
+    bottom.textContent = "";
     let operators = document.querySelectorAll('.operator');
     operators.forEach(operator => operator.disabled = true);
 }
 
 function subtraction() {
-    firstOperand = screen.textContent;
+    firstOperand = bottom.textContent;
+    topText.textContent = `${firstOperand} - `
     operator = '-';
-    screen.textContent = "";
+    bottom.textContent = "";
     let operators = document.querySelectorAll('.operator');
     operators.forEach(operator => operator.disabled = true);
 }
 
 function multiplication() {
-    firstOperand = screen.textContent;
+    firstOperand = bottom.textContent;
+    topText.textContent = `${firstOperand} x `
     operator = 'x';
-    screen.textContent = "";
+    bottom.textContent = "";
     let operators = document.querySelectorAll('.operator');
     operators.forEach(operator => operator.disabled = true);
 }
 
 function division() {
-    firstOperand = screen.textContent;
+    firstOperand = bottom.textContent;
+    topText.textContent = `${firstOperand} / `
     operator = '/';
-    screen.textContent = "";
+    bottom.textContent = "";
     let operators = document.querySelectorAll('.operator');
     operators.forEach(operator => operator.disabled = true);
 }
