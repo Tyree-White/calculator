@@ -56,6 +56,7 @@ function printDecimal() {
 function printNumber() {
     if (operator === '=') {
         topText.textContent = bottom.textContent;
+        bottom.textContent = '';
         operator = undefined;
     }
     return bottom.textContent += this.value
@@ -141,7 +142,6 @@ function operate() {
           break;
         default:
           bottom.textContent = 'Error';
-          operator = 'Error';
     }
     operator = '=';
 }
