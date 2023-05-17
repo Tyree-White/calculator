@@ -55,9 +55,12 @@ function printDecimal() {
 
 function printNumber() {
     if (operator === '=') {
+        let operators = document.querySelectorAll('.operator');
+        operators.forEach(operator => operator.disabled = false);
         topText.textContent = bottom.textContent;
         bottom.textContent = '';
         operator = undefined;
+
     }
     return bottom.textContent += this.value
 }
@@ -115,6 +118,10 @@ function division() {
 
 function operate() {
     let result;
+    let operators = document.querySelectorAll('.operator');
+    operators.forEach(operator => operator.disabled = false);
+    decimal.disabled = false;
+
     secondOperand = bottom.textContent;
     firstOperand = Number(firstOperand);
     secondOperand = Number(secondOperand);
@@ -141,6 +148,7 @@ function operate() {
           bottom.textContent = result;
           break;
         default:
+          operators.forEach(operator => operator.disabled = true);
           bottom.textContent = 'Error';
     }
     operator = '=';
