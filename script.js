@@ -46,6 +46,7 @@ function divide(x, y) {
 }
 
 function printDecimal() {
+    decimal.disabled = true;
     return bottom.textContent += this.value;
 }
 
@@ -61,6 +62,7 @@ function deleteNumber() {
     let bottomText = bottom.textContent;
     newText = bottomText.substring(0, bottomText.length-1);
     bottom.textContent = newText;
+    decimal.disabled = false;
     return console.log(newText);
 }
 
@@ -71,6 +73,7 @@ function addition() {
     bottom.textContent = "";
     let operators = document.querySelectorAll('.operator');
     operators.forEach(operator => operator.disabled = true);
+    decimal.disabled = false;
 }
 
 function subtraction() {
@@ -80,6 +83,7 @@ function subtraction() {
     bottom.textContent = "";
     let operators = document.querySelectorAll('.operator');
     operators.forEach(operator => operator.disabled = true);
+    decimal.disabled = false;
 }
 
 function multiplication() {
@@ -89,6 +93,7 @@ function multiplication() {
     bottom.textContent = "";
     let operators = document.querySelectorAll('.operator');
     operators.forEach(operator => operator.disabled = true);
+    decimal.disabled = false;
 }
 
 function division() {
@@ -98,4 +103,5 @@ function division() {
     bottom.textContent = "";
     let operators = document.querySelectorAll('.operator');
     operators.forEach(operator => operator.disabled = true);
+    decimal.disabled = false;
 }
